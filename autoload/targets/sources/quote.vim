@@ -13,7 +13,7 @@ let s:quoteArgs = {
 " but could be used to disable 'smart' quote skipping
 " some technicalities: inverse mapping from quote reps to quote arg reps
 " quote rep '102' means:
-"   1: even number of quotation character left from cursor
+"   1: odd number of quotation character left from cursor
 "   0: no quotation char under cursor
 "   2: even number (but nonzero) of quote chars right of cursor
 " arg rep 'r1l' means:
