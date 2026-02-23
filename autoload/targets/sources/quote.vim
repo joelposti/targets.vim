@@ -110,14 +110,14 @@ endfunction
 " returns [dir, rate, skipL, skipR, error]
 function! s:quoteDir(quoteDirs, delimiter)
     let line = getline('.')
-    let col = col('.')
+    let charcol = charcol('.')
 
     " cut line in left of, on and right of cursor
-    let left = col > 1 ? line[:col-2] : ""
-    let cursor = line[col-1]
-    let right = line[col :]
+    let left = strcharpart(line, 0, charcol-1)
+    let cursor = strcharpart(line, charcol-1, 1)
+    let right = strcharpart(line, charcol)
 
-    " how many delitimers left, on and right of cursor
+    " how many delimiters left, on and right of cursor
     let lc = s:count(a:delimiter, left)
     let cc = s:count(a:delimiter, cursor)
     let rc = s:count(a:delimiter, right)
