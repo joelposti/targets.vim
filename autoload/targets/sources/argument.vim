@@ -189,6 +189,6 @@ endfunction
 
 " returns the character under the cursor
 function! s:getchar()
-    return getline('.')[col('.')-1]
+    return strcharpart(getline('.'), charcol('.')-1, 1)
 endfunction
 
